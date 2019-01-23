@@ -31,7 +31,7 @@ class AmFactory
      */
     static register(name = '', constructor = null)
     {
-        if (!$REGISTRY[name])
+        if (name && typeof AmFactory.get(name) === 'undefined')
         {
             $REGISTRY[name] = constructor;
         }
