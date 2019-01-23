@@ -1,0 +1,20 @@
+{
+    "name": "am-factory",
+    "version": "0.1.0",
+    "description": "Provides a unique registry engine for singletons",
+    "main": "index.js",
+    "scripts": {
+        "test": "istanbul cover --root src --include-all-sources --print both --report html -x test.js test.js"
+    },
+    "keywords": [
+        "node",
+        "web",
+        "registry",
+        "singletons"
+    ],
+    "author": "Arturo Martínez <arturo.martinez@wolfchamane.com>",
+    "license": "MIT",
+    "devDependencies": {
+        "istanbul": "^0.4.5"
+    }
+}
