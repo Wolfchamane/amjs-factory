@@ -1,6 +1,6 @@
 {
     "name": "am-factory",
-    "version": "0.1.0",
+    "version": "0.0.0",
     "description": "Provides a unique registry engine for singletons",
     "main": "index.js",
     "scripts": {
@@ -12,6 +12,10 @@
         "registry",
         "singletons"
     ],
+    "repository": {
+        "type": "git",
+        "url": "git@github.com:Wolfchamane/am-factory.git"
+    },
     "author": "Arturo Martínez <arturo.martinez@wolfchamane.com>",
     "license": "MIT",
     "devDependencies": {
