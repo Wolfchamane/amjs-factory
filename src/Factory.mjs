@@ -4,13 +4,14 @@
  * @type        {Object}
  */
 const $REGISTRY = {};
+let $i = null;
 
 /**
  * Factory class, provides methods for registration and creation of singletons
  * @namespace   am
  * @class       am.Factory
  */
-class AmFactory
+export default class AmFactory
 {
     /**
      * Returns the constructor of a registered type
@@ -24,6 +25,16 @@ class AmFactory
     }
 
     /**
+     * Returns all the registered keys within registry.
+     * @method  getRegisteredKeys
+     * @return  {String[]}  Registered keys
+     */
+    static getRegisteredKeys()
+    {
+        return Object.keys($REGISTRY);
+    }
+
+    /**
      * Registers an unique constructor of a class or singleton
      * @method  register
      * @param   {String}            name        Identifier of the constructor
@@ -31,7 +42,7 @@ class AmFactory
      */
     static register(name = '', constructor = null)
     {
-        if (name && typeof AmFactory.get(name) === 'undefined')
+        if (name && typeof AmFactory.get(name) === 'undefined' && typeof constructor === 'function')
         {
             $REGISTRY[name] = constructor;
         }
@@ -50,19 +61,31 @@ class AmFactory
 
         return Clazz ? new Clazz(value) : null;
     }
-}
 
-// --- Save "$factory"
-$REGISTRY['$factory'] = AmFactory;
+    /**
+     * Removes any registered key except '$factory'
+     * @method  clear
+     */
+    static clear()
+    {
+        Object.keys($REGISTRY).forEach(
+            key =>
+            {
+                if (key !== '$factory')
+                {
+                    delete $REGISTRY[key];
+                }
+            }
+        )
+    }
 
-let $i = null;
-
-module.exports = {
-    AmFactory,
-    i()
+    static i()
     {
         $i = $i || new AmFactory();
 
         return $i;
     }
-};
+}
+
+// --- Save "$factory"
+$REGISTRY['$factory'] = AmFactory;
