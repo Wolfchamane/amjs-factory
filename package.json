@@ -1,21 +1,29 @@
 {
     "name": "@arturomartinezdiaz/factory",
-    "version": "0.2.2",
+    "version": "0.2.3",
     "description": "Provides a unique registry engine for singletons",
-    "main": "index.js",
+    "main": "src/Factory.mjs",
     "scripts": {
         "test": "NODE_ENV=testing node src/Factory.spec.mjs"
     },
-    "keywords": [
-        "node",
-        "web",
-        "registry",
-        "singletons"
-    ],
     "repository": {
         "type": "git",
-        "url": "git@github.com:Wolfchamane/am-factory.git"
+        "url": "git+https://github.com/Wolfchamane/am-factory.git"
     },
-    "author": "Arturo Martínez <arturo.martinez@wolfchamane.com>",
-    "license": "MIT"
+    "keywords": [
+        "nodejs",
+        "commonjs",
+        "es6",
+        "factory",
+        "singleton",
+        "unique-registry",
+        "registry",
+        "factory"
+    ],
+    "author": "Arturo Martínez Díaz <arturo.mart.diaz@gmail.com>",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/Wolfchamane/am-factory/issues"
+    },
+    "homepage": "https://github.com/Wolfchamane/am-factory#readme"
 }
