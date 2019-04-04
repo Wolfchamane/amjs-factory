@@ -4,15 +4,37 @@
  * @type        {Object}
  */
 const $REGISTRY = {};
-let $i = null;
+let $i;
+let $initMethod = 'setProperties';
 
 /**
  * Factory class, provides methods for registration and creation of singletons
  * @namespace   am
  * @class       am.Factory
  */
-export default class AmFactory
+class AmFactory
 {
+    /**
+     * Returns current default initialization method
+     * @return {String} Init method
+     */
+    static get defaultInitMethod()
+    {
+        return $initMethod;
+    }
+
+    /**
+     * Sets new initialization method
+     * @param   {String}    method  Method name
+     */
+    static set defaultInitMethod(method)
+    {
+        if (method && typeof method === 'string')
+        {
+            $initMethod = method;
+        }
+    }
+
     /**
      * Returns the constructor of a registered type
      * @method  get
@@ -52,14 +74,24 @@ export default class AmFactory
      * Creates an instance of the constructor or singleton registered by `name`
      * @method  create
      * @param   {String}    name    Identifier of the constructor
-     * @param   {*}         value   To apply into constructor
+     * @param   {*}         values  To apply into constructor
      * @return  {Object|null}   Instanceof the constructor or `null` if was not registered
      */
-    static create(name, value = null)
+    static create(name, values = null)
     {
+        let _instance;
         const Clazz = AmFactory.get(name);
+        if (typeof Clazz === 'function')
+        {
+            _instance = new Clazz();
+            const initMethod = AmFactory.defaultInitMethod;
+            if (typeof _instance[initMethod] === 'function')
+            {
+                _instance[initMethod](values);
+            }
+        }
 
-        return Clazz ? new Clazz(value) : null;
+        return _instance;
     }
 
     /**
@@ -79,6 +111,10 @@ export default class AmFactory
         )
     }
 
+    /**
+     * Returns singleton instance of this class
+     * @return {am.AmFactory}   Instance
+     */
     static i()
     {
         $i = $i || new AmFactory();
@@ -88,4 +124,7 @@ export default class AmFactory
 }
 
 // --- Save "$factory"
-$REGISTRY['$factory'] = AmFactory;
+$REGISTRY['$factory'] = AmFactory.i();
+
+// --- Export as CJS
+module.exports = AmFactory;
