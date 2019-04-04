@@ -1,10 +1,10 @@
 {
-    "name": "am-factory",
-    "version": "0.2.1",
+    "name": "@arturomartinezdiaz/factory",
+    "version": "0.2.2",
     "description": "Provides a unique registry engine for singletons",
     "main": "index.js",
     "scripts": {
-        "test": "NODE_ENV=testing node node_modules/am-tools/scripts/test.js --no-cache"
+        "test": "NODE_ENV=testing node src/Factory.spec.mjs"
     },
     "keywords": [
         "node",
@@ -17,8 +17,5 @@
         "url": "git@github.com:Wolfchamane/am-factory.git"
     },
     "author": "Arturo Martínez <arturo.martinez@wolfchamane.com>",
-    "license": "MIT",
-    "dependencies": {
-        "am-tools": "^0.1.0"
-    }
+    "license": "MIT"
 }
