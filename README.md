@@ -2,40 +2,36 @@
 
 > Provides a unique registry engine for singletons
 
-[![NPM](https://nodei.co/npm/am-factory.png)](https://www.npmjs.com/package/am-factory)
+[![NPM](https://nodei.co/npm/@arturomartinezdiaz/factory.png)](https://www.npmjs.com/package/@arturomartinezdiaz/factory)
 
 ## Installation
 
 ```bash
-$ npm i --save am-factory
+$ npm i --save @arturomartinezdiaz/factory
 ```
 
-## Extending
+## Use
 
 ```javascript
-// ES6
-import AmFactory from 'am-factory/src/Factory';
+const AmFactory = require('@arturomartinezdiaz/factory');
 
-class MyClass extends AmFactory
+class MyClass
 {
-    constructor(values)
+    constructor()
     {
-        super();
-        
-        // do something with values
-    }    
+        this.index = 0;
+    }
+    
+    setProperties(values)
+    {
+        // do somthing with 'values'
+    }  
 }
-```
 
-## Using static methods
-
-```javascript
-// Register constructor
+// Registration
 AmFactory.register('MyClass', MyClass);
 
-// Get constructor
-AmFactory.get('MyClass');
-
-// Create instance
-AmFactory.create('MyClass', values);
+// Creation
+const _instance = AmFactory.create('MyClass', { index : 1 });
+console.log(_instance.index); // 1
 ```

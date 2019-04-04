@@ -1,6 +1,6 @@
 {
     "name": "@arturomartinezdiaz/factory",
-    "version": "0.2.3",
+    "version": "0.2.4",
     "description": "Provides a unique registry engine for singletons",
     "main": "src/Factory.mjs",
     "scripts": {
