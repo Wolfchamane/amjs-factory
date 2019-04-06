@@ -1,19 +1,19 @@
-# am-factory
+# @amjs/factory
 
 > Provides a unique registry engine for singletons
 
-[![NPM](https://nodei.co/npm/@arturomartinezdiaz/factory.png)](https://www.npmjs.com/package/@arturomartinezdiaz/factory)
+[![NPM](https://nodei.co/npm/@amjs/factory.png)](https://www.npmjs.com/package/@amjs/factory)
 
 ## Installation
 
 ```bash
-$ npm i --save @arturomartinezdiaz/factory
+$ npm i --save @amjs/factory
 ```
 
 ## Use
 
 ```javascript
-const AmFactory = require('@arturomartinezdiaz/factory');
+const AmFactory = require('@amjs/factory');
 
 class MyClass
 {

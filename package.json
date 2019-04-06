@@ -1,6 +1,6 @@
 {
-    "name": "@arturomartinezdiaz/factory",
-    "version": "0.2.4",
+    "name": "@amjs/factory",
+    "version": "0.2.5",
     "description": "Provides a unique registry engine for singletons",
     "main": "src/Factory.mjs",
     "scripts": {
@@ -8,7 +8,7 @@
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/Wolfchamane/am-factory.git"
+        "url": "git+https://github.com/Wolfchamane/amjs-factory.git"
     },
     "keywords": [
         "nodejs",
@@ -23,7 +23,7 @@
     "author": "Arturo Martínez Díaz <arturo.mart.diaz@gmail.com>",
     "license": "MIT",
     "bugs": {
-        "url": "https://github.com/Wolfchamane/am-factory/issues"
+        "url": "https://github.com/Wolfchamane/amjs-factory/issues"
     },
-    "homepage": "https://github.com/Wolfchamane/am-factory#readme"
+    "homepage": "https://github.com/Wolfchamane/amjs-factory#readme"
 }
