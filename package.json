@@ -1,8 +1,8 @@
 {
     "name": "@amjs/factory",
-    "version": "0.2.6",
+    "version": "0.2.7",
     "description": "Provides a unique registry engine for singletons",
-    "main": "src/Factory.mjs",
+    "main": "src/Factory.js",
     "scripts": {
         "test": "NODE_ENV=testing nyc node tests/Factory.js"
     },
