@@ -4,7 +4,7 @@
     "description": "Provides a unique registry engine for singletons",
     "main": "src/Factory.mjs",
     "scripts": {
-        "test": "NODE_ENV=testing node src/Factory.spec.mjs"
+        "test": "NODE_ENV=testing nyc node tests/Factory.js"
     },
     "repository": {
         "type": "git",
@@ -25,5 +25,13 @@
     "bugs": {
         "url": "https://github.com/Wolfchamane/amjs-factory/issues"
     },
-    "homepage": "https://github.com/Wolfchamane/amjs-factory#readme"
+    "homepage": "https://github.com/Wolfchamane/amjs-factory#readme",
+    "devDependencies": {
+        "@babel/core": "^7.4.5",
+        "@babel/preset-env": "^7.4.5",
+        "@babel/register": "^7.4.4",
+        "@istanbuljs/nyc-config-babel": "^2.1.1",
+        "babel-plugin-istanbul": "^5.1.4",
+        "nyc": "^14.1.1"
+    }
 }
