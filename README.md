@@ -1,4 +1,4 @@
-# @amjs/factory
+# @amjs/factory 0.2.9
 
 > Provides a unique registry engine for singletons
 
@@ -21,11 +21,11 @@ class MyClass
     {
         this.index = 0;
     }
-    
+
     setProperties(values)
     {
         // do somthing with 'values'
-    }  
+    }
 }
 
 // Registration
